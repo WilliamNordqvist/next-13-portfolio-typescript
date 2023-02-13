@@ -1,18 +1,21 @@
-import './globals.css'
+import { Background } from "@/components/background/background";
+import "./globals.css";
+import { Exo } from "@next/font/google";
 
+const ubuntu = Exo({
+  weight: ["100", "200", "300", "400", "500"],
+});
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <body>{children}</body>
+      <body className={ubuntu.className}>
+        <Background>{children}</Background>
+      </body>
     </html>
-  )
+  );
 }
