@@ -32,14 +32,14 @@ export const Hero = () => {
   return (
     <div className="flex flex-col items-center uppercase font-thin tracking-widest ">
       <motion.h1
-        initial={{ x: 1800 }}
+        initial={{ x: 2500 }}
         className="text-5xl sm:text-8xl"
         animate={William}
       >
         william
       </motion.h1>
       <motion.h1
-        initial={{ x: -1800 }}
+        initial={{ x: -2500 }}
         animate={Nordqvist}
         className="text-5xl sm:text-8xl"
       >
