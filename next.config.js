@@ -6,6 +6,9 @@ const nextConfig = {
     ],
     appDir: true,
   },
+  images: {
+    domains: ['images.ctfassets.net', "pics.freeicons.io"],
+  },
 };
 
 module.exports = nextConfig;

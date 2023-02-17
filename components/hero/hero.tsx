@@ -12,18 +12,18 @@ export const Hero = () => {
       William.start(() => ({
         opacity: 1,
         x: 0,
-        transition: {type: "spring", stiffness: 75, mass: 0.4, delay: 1.5 },
+        transition: {type: "spring", stiffness: 75, mass: 0.4, delay: .5 },
       }));
 
       Nordqvist.start(() => ({
         opacity: 1,
         x: 0,
-        transition: { type: "spring", stiffness: 75, mass: 0.4, delay: 1.5 },
+        transition: { type: "spring", stiffness: 75, mass: 0.4, delay: .5 },
       }));
 
       await P.start(() => ({
         opacity: 1,
-        transition: { duration: 1, delay: 2.5 },
+        transition: { duration: 1, delay: 1.5 },
       }));
     };
     runAnim();
