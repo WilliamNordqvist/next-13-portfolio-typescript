@@ -1,5 +1,6 @@
 import { Hero } from "@/components/hero/hero";
 import { Section } from "@/components/section/section";
+import { Skills } from "@/components/skills/skills";
 import { Work } from "@/components/work/work";
 import { getCases } from "@/services/casesService";
 
@@ -13,6 +14,9 @@ const Page = async () => {
       </Section>
       <Section>
         <Work data={data} />
+      </Section>
+      <Section>
+        <Skills />
       </Section>
     </>
   );
