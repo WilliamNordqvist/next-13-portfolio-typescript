@@ -10,7 +10,6 @@ html {
 body {
   padding: 0;
   position: relative;
-  max-width: 1700px;
   height: 100vh;
   overflow: auto;
 }
