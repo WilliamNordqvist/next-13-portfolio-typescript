@@ -20,8 +20,8 @@ export const Skills = () => {
       <Title>My Skills</Title>
 
       {SkillObj.map(({ title, skill }) => (
-        <>
-          <div key={title + skill} className="max-w-xl sm:max-w-3xl m-auto">
+        <div key={title + skill}>
+          <div className="max-w-xl sm:max-w-3xl m-auto">
             <h3 className="text-white font-extralight">{title}</h3>
             <div className="bg-white bg-opacity-90 w-full h-6 shadow-[0_5px_12px_-6px_#fcfcfc] relative rounded mb-4 p-px">
               <motion.div
@@ -35,7 +35,7 @@ export const Skills = () => {
               </motion.div>
             </div>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );

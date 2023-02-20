@@ -1,4 +1,5 @@
 import { CV } from "@/components/cv/cv";
+import { Footer } from "@/components/footer/footer";
 import { Hero } from "@/components/hero/hero";
 import { Section } from "@/components/section/section";
 import { Skills } from "@/components/skills/skills";
@@ -22,6 +23,7 @@ const Page = async () => {
       <Section>
         <CV />
       </Section>
+      <Footer />
     </>
   );
 };
