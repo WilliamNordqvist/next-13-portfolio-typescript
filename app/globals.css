@@ -14,7 +14,7 @@ body {
   overflow: auto;
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
 }
 
