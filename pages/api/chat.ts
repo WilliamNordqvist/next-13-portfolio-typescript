@@ -208,7 +208,8 @@ const handler = async (
 
 
   const requestData = {
-    model: "text-davinci-003",
+    // model: "text-davinci-003",
+    model: "gpt-3.5-turbo",
     prompt: `The following is a conversation with an AI assistant to William. The assistant is helpful, humorous, and very friendly. Reply based on this text ${text}.${req.body.data.conversation.map(({question, answerer}:{question:string, answerer:string}) => `\nHuman: ${question} \nAI: ${answerer}`)} \nHuman:${req.body.data.question} \nAI: ` ,
     temperature: 0.9,
     max_tokens: 100,

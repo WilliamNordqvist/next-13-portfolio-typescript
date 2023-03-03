@@ -1,5 +1,6 @@
 "use client";
 
+import { Analytics } from "@/services/analytics";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
@@ -16,7 +17,7 @@ export const Chat = () => {
 
   const ask = useCallback(async () => {
     if(inputQuestion === "") return
-
+    Analytics.chat(inputQuestion)
     let currentConverstaion: Conversation = {
       question: inputQuestion,
       answerer: "...",

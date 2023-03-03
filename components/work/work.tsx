@@ -1,6 +1,7 @@
 "use client";
 
 import { WorksProps } from "@/services/casesService";
+import { Analytics } from "@/services/analytics";
 import { useState } from "react";
 import { Card } from "../card/card";
 import { MoreIcon } from "../icons/more";
@@ -13,6 +14,11 @@ export const Work = ({ data }: { data: WorksProps[] }) => {
   const [filterWorks, setFilterWorks] = useState(9);
   const showMore = filterWorks === 9;
 
+  const onClick = (work: WorksProps) => {
+    setSelectedWork(work)
+    Analytics.savePage(work.name)
+  }
+
   return (
     <div>
       <Title>my work</Title>
@@ -21,7 +27,7 @@ export const Work = ({ data }: { data: WorksProps[] }) => {
           <Card
             name={work.name}
             key={work.id}
-            onClick={() => setSelectedWork(work)}
+            onClick={() => onClick(work)}
             alt={`printscreen from website ${work.name}`}
             src={work.image.url}
           />
