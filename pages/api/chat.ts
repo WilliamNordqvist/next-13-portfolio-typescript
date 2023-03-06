@@ -10,10 +10,12 @@ Phone:+46(0)723121941
 linkedIn:https://www.linkedin.com/in/william-nordqvist-7221b340/
 github:https://github.com/WilliamNordqvist
 
+If you want my cv you can get it here: https://assets.ctfassets.net/dgbqz1h8siux/1STy1sjXfeRf5aCo9krQVv/7cb9b541ed232f1d2ab01537aec0d677/WilliamFE2022.pdf
+
 William is 33 years old, born and raised in Stockholm. He is currently employed at Crowd Collective as a consultant.
  He is a developer with previous long experience as Manager who
 transitioned to a career in software development as a front-end
-developer, primarily working in ntech.
+developer, primarily working in tech.
 He possesses a humble attitude, always eager to learn new
 technologies and collaborate with others. He is detail-oriented, calm, a
 good listener, and comfortable working independently or in a team.
@@ -204,35 +206,32 @@ type Data = {
 const handler = async (
   req: NextApiRequest,
   res: NextApiResponse<Data>
-) => {
+) => {  
 
+const rules = 'do not ever never translate "front end developer" to any other languages. Do not refer the information to Williams CV'
 
-  const requestData = {
-    // model: "text-davinci-003",
-    model: "gpt-3.5-turbo",
-    prompt: `The following is a conversation with an AI assistant to William. The assistant is helpful, humorous, and very friendly. Reply based on this text ${text}.${req.body.data.conversation.map(({question, answerer}:{question:string, answerer:string}) => `\nHuman: ${question} \nAI: ${answerer}`)} \nHuman:${req.body.data.question} \nAI: ` ,
-    temperature: 0.9,
-    max_tokens: 100,
-    top_p: 1,
-    frequency_penalty: 0,
-    presence_penalty: 0.6,
-    stop: [" Human:", " AI:"],
-  };
-  
-  const config = {
+const config = {
     method: 'post',
-    url: 'https://api.openai.com/v1/completions',
-    headers: {
-      Authorization: `Bearer ${process.env.CHAT_KEY}`,
-      'Content-Type': 'application/json',
+    url: 'https://api.openai.com/v1/chat/completions',
+    headers: { 
+      'Authorization': `Bearer ${process.env.CHAT_KEY}`, 
+      'Content-Type': 'application/json'
     },
-    data: JSON.stringify(requestData),
+    data : JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages:[
+        {
+          role: "system",
+          content: `You are a helpful and very funny assistant to William, answerer as you know William based on his CV ${text}. here is some rules you must follow ${rules}.`
+        },
+          ...req.body.data.conversation,
+      ]
+    })
   };
-
 
     const response  = await axios(config)
-    return res.status(200).json({ answerer: response.data.choices[0].text}) 
-  
+
+    return res.status(200).json({ answerer: response.data.choices[0].message.content})  
 }
 
 
