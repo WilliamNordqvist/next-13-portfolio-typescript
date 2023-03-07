@@ -1,16 +1,8 @@
 import axios from "axios"
-// const url = `https://script.google.com/macros/s/${process.env.ANALYTICS}/exec`
-const url = `https://script.google.com/macros/s/${process.env.ANALYTICS}/exec`
 
 
-export const savePageView = async (page:string) => {
-    
-}
-
+const url = process.env.NEXT_PUBLIC_ANALYTICS as string
 export const Analytics = {
-    savePage:async (page:string) => {
-        await axios.post(url,JSON.stringify({page}))
-    },
-
-    chat:async (chat:string) => {await axios.post(url + '?type=chat',JSON.stringify({chat}))},
+    savePage: async (page:string) => await axios.post(url,JSON.stringify({page})),
+    chat: async (chat:string[]) => {await axios.post(url + '?type=chat',JSON.stringify({q:chat[0], a:chat[1]}))},
 }

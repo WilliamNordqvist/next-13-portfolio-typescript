@@ -59,6 +59,7 @@ export const Chat = () => {
           content: answerer,
         },
       ]);
+      Analytics.chat([inputQuestion, answerer])
     },
     [conversation, inputQuestion]
   );
