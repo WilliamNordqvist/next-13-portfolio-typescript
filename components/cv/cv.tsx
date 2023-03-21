@@ -7,7 +7,7 @@ export const CV = () => {
     <div className="flex flex-col items-center">
       <Title>My CV</Title>
       <Link
-        href="https://assets.ctfassets.net/dgbqz1h8siux/1STy1sjXfeRf5aCo9krQVv/7cb9b541ed232f1d2ab01537aec0d677/WilliamFE2022.pdf"
+        href="https://assets.ctfassets.net/dgbqz1h8siux/1STy1sjXfeRf5aCo9krQVv/eb6f56af531d508befec9a9a441d59e9/WilliamFE2023.pdf"
         download="WilliamNordvist - CV/Personal Letter"
       >
         <CvIcon />
