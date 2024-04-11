@@ -1,11 +1,11 @@
-import { Background } from "@/components/background/background";
 import "./globals.css";
-import { Exo } from "@next/font/google";
-import { AnalyticsWrapper } from "@/components/analytics/analytics";
 
-const ubuntu = Exo({
-  weight: ["100", "200", "300", "400", "500"],
-});
+import { AnalyticsWrapper } from "@/components/analytics/analytics";
+import { Background } from "@/components/background/background";
+import { Ubuntu } from "next/font/google";
+
+const ubuntu = Ubuntu({ weight: ["300", "400", "500"], subsets: ["latin"] });
+
 export default function RootLayout({
   children,
 }: {
@@ -17,8 +17,8 @@ export default function RootLayout({
       <body className={ubuntu.className}>
         <Background>
           {children}
-          <AnalyticsWrapper/>
-          </Background>
+          <AnalyticsWrapper />
+        </Background>
       </body>
     </html>
   );
