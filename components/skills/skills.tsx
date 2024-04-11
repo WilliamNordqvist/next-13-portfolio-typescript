@@ -1,17 +1,18 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Title } from "../title/title";
+import { motion } from "framer-motion";
 
 export const Skills = () => {
   const SkillObj: { title: string; skill: number }[] = [
     { title: "Javascript", skill: 90 },
     { title: "Typescript", skill: 80 },
-    { title: "React", skill: 90 },
-    { title: "Next", skill: 80 },
+    { title: "React", skill: 85 },
+    { title: "Next", skill: 95 },
     { title: "Svelte", skill: 80 },
     { title: "HTML,CSS", skill: 90 },
     { title: "Java", skill: 20 },
+    { title: "Node", skill: 60 },
     { title: "SQL", skill: 30 },
   ];
 
