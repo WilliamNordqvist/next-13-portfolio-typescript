@@ -1,11 +1,10 @@
-import { Chat } from "@/components/chat/chat";
 import { CV } from "@/components/cv/cv";
+import { Chat } from "@/components/chat/chat";
 import { Footer } from "@/components/footer/footer";
 import { Hero } from "@/components/hero/hero";
 import { Section } from "@/components/section/section";
 import { Skills } from "@/components/skills/skills";
 import { Work } from "@/components/work/work";
-
 import { getCases } from "@/services/casesService";
 
 const Page = async () => {
@@ -17,7 +16,7 @@ const Page = async () => {
         <Hero />
       </Section>
       <Section>
-        <Chat/>
+        <Chat />
       </Section>
       <Section>
         <Work data={data} />
